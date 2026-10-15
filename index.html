@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonoaudióloga Elisângela Costa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0e7490', // Cyan 700
+                        secondary: '#14b8a6', // Teal 500
+                        accent: '#e0f2fe', // Light blue 100
+                        dark: '#1e293b', // Slate 800
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        
+        /* Fade-in animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Pulse animation for WhatsApp button */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-fab {
+            animation: pulse-ring 2s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased bg-gray-50">
+
+    <!-- Header / Navbar -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white text-xl">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-dark leading-tight">Elisângela Costa</h1>
+                        <p class="text-sm text-primary font-medium">Fonoaudióloga</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#servicos" class="text-gray-600 hover:text-primary transition-colors font-medium">Serviços</a>
+                    <a href="#localizacao" class="text-gray-600 hover:text-primary transition-colors font-medium">Localização</a>
+                </div>
+                <div>
+                    <a href="https://wa.me/5521971902375" target="_blank" class="bg-secondary hover:bg-teal-600 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span class="hidden sm:inline">Agendar Consulta</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-accent to-white overflow-hidden relative">
+        <!-- Decorative shapes -->
+        <div class="absolute top-20 right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto fade-in">
+                
+                <!-- Rating Badge -->
+                <div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm mb-6 border border-gray-100">
+                    <div class="text-yellow-400 flex text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span class="text-dark font-semibold">5,0</span>
+                    <span class="text-gray-500 text-sm">(31 avaliações)</span>
+                </div>
+
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark leading-tight mb-6">
+                    Comunicação e Voz com <span class="text-primary">Cuidado e Excelência</span>
+                </h2>
+                
+                <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                    Atendimento humanizado e especializado. Recupere a qualidade da sua comunicação, fala e voz com tratamentos adequados para todas as idades.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://wa.me/5521971902375" target="_blank" class="bg-primary hover:bg-cyan-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        Falar no WhatsApp
+                    </a>
+                    <a href="#servicos" class="bg-white hover:bg-gray-50 text-dark border border-gray-200 px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-sm flex items-center justify-center">
+                        Conhecer Serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h3 class="text-primary font-semibold tracking-wide uppercase text-sm mb-2">Especialidades</h3>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark">Serviços Oferecidos</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 fade-in group">
+                    <div class="w-14 h-14 bg-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <i class="fa-solid fa-baby text-2xl text-primary group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-dark mb-4">Teste da Linguinha</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Avaliação precoce e segura para o frênulo lingual de bebês. Fundamental para garantir uma amamentação sem dores e o desenvolvimento adequado da fala infantil.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 fade-in group" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <i class="fa-solid fa-comments text-2xl text-primary group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-dark mb-4">Terapia de Fala e Linguagem</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Acompanhamento especializado para atrasos na fala, trocas de letras e estímulo ao desenvolvimento da linguagem de forma lúdica e eficaz para crianças e adultos.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 fade-in group" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <i class="fa-solid fa-microphone-lines text-2xl text-primary group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-dark mb-4">Terapia de Voz</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Cuidado focado em profissionais da voz (professores, cantores, etc.), tratamento de rouquidão, cansaço vocal e reabilitação para uma voz clara e saudável.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Info Section -->
+    <section id="localizacao" class="py-20 bg-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="fade-in">
+                    <h3 class="text-secondary font-semibold tracking-wide uppercase text-sm mb-2">Visite o Consultório</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Localização e Contato</h2>
+                    <p class="text-gray-300 mb-8 text-lg">
+                        Um espaço planejado para o seu conforto e bem-estar, localizado no centro de Belford Roxo com fácil acesso.
+                    </p>
+
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-location-dot text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Endereço</h4>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Shopping Nova Belford<br>
+                                    Av. Benjamin Pinto Dias, 1130 - Sala 302<br>
+                                    Centro, Belford Roxo - RJ<br>
+                                    CEP: 26130-000
+                                </p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-clock text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Horário de Funcionamento</h4>
+                                <p class="text-gray-400">Atendimentos mediante agendamento.</p>
+                            </div>
+                        </li>
+
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-brands fa-whatsapp text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">WhatsApp</h4>
+                                <p class="text-gray-400">(21) 97190-2375</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Google Maps Placeholder/Iframe Area -->
+                <div class="bg-white/5 p-2 rounded-3xl fade-in" style="transition-delay: 200ms;">
+                    <div class="relative w-full h-[400px] rounded-2xl overflow-hidden bg-gray-800">
+                        <!-- Using a generic map embed based on the address for visualization -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.291361956799!2d-43.39959632469145!3d-22.76348327935496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9965d1d64c1bb3%3A0x86bd6e1598f62fa1!2sAv.%20Benjamin%20Pinto%20Dias%2C%201130%20-%20Centro%2C%20Belford%20Roxo%20-%20RJ%2C%2026130-000!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; filter: invert(90%) hue-rotate(180deg);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; <span id="year"></span> Fonoaudióloga Elisângela Costa. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5521971902375" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform whatsapp-fab" aria-label="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts for Interactivity -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Run once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
