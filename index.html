@@ -1,279 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fonoaudióloga Elisângela Costa</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#0e7490', // Cyan 700
-                        secondary: '#14b8a6', // Teal 500
-                        accent: '#e0f2fe', // Light blue 100
-                        dark: '#1e293b', // Slate 800
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Smooth scrolling */
-        html { scroll-behavior: smooth; }
-        
-        /* Fade-in animation classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Pulse animation for WhatsApp button */
-        @keyframes pulse-ring {
-            0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-        .whatsapp-fab {
-            animation: pulse-ring 2s infinite;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Vinícius Assis | Endocrinologia em Nova Iguaçu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--bg2:#f3f6fb;--ink:#0c1f3f;--mut:#51607a;--navy:#0c1f3f;--red:#8b1a1a;--card:#fff;--line:#dbe3ef;--on-navy:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08132a;--bg2:#0c1b38;--ink:#eef2fa;--mut:#a5b2c9;--navy:#0c1f3f;--red:#b32626;--card:#0f2147;--line:#1f3562}}
+:root[data-theme="dark"]{--bg:#08132a;--bg2:#0c1b38;--ink:#eef2fa;--mut:#a5b2c9;--navy:#0c1f3f;--red:#b32626;--card:#0f2147;--line:#1f3562}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,Arial,sans-serif}
+h1,h2,h3{font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif;font-weight:400;letter-spacing:.02em;line-height:1.05;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{font-family:"Bebas Neue",Impact,sans-serif;font-size:22px;letter-spacing:.04em}
+.logo small{display:block;font:500 11px Inter,sans-serif;color:var(--mut);letter-spacing:.06em}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:6px}
+.btn.ghost{background:transparent;border:1.5px solid currentColor}
+.hero{background:var(--navy);color:var(--on-navy);padding:0 0 72px}
+.hero header .logo small{color:#b8c4dc}
+.hero h1{font-size:clamp(46px,9vw,88px);margin-top:48px;max-width:760px}
+.hero h1 mark{background:var(--red);color:#fff;padding:0 .15em}
+.hero p{max-width:560px;color:#cfd8ea;font-size:18px;margin:20px 0 32px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:68px 0}
+section.alt{background:var(--bg2)}
+.kicker{color:var(--red);font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(34px,6vw,52px);margin-bottom:28px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--red);border-radius:8px;padding:24px}
+.card h3{font-size:28px;margin-bottom:8px}
+.card p{margin:0;color:var(--mut);font-size:15px}
+.sign{columns:2 260px;gap:32px;list-style:none;padding:0;margin:0 0 24px}
+.sign li{padding:8px 0 8px 32px;position:relative;break-inside:avoid}
+.sign li::before{content:"✓";position:absolute;left:0;top:8px;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:13px;text-align:center;line-height:22px}
+.note{border-left:4px solid var(--red);padding:4px 0 4px 16px;color:var(--mut);max-width:640px}
+.steps{counter-reset:s;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.step{counter-increment:s}
+.step::before{content:"0" counter(s);font-family:"Bebas Neue",Impact,sans-serif;font-size:48px;color:var(--red)}
+.step h3{font-size:26px}
+.step p{color:var(--mut);margin:6px 0 0;font-size:15px}
+.cta{background:var(--navy);color:#fff;text-align:center}
+.cta h2{margin-bottom:12px}
+.cta p{color:#cfd8ea;margin:0 auto 28px;max-width:520px}
+.loc{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start}
+.loc p{margin:0 0 10px}
+footer{padding:28px 0;font-size:13px;color:var(--mut);text-align:center;border-top:1px solid var(--line)}
+</style>
 </head>
-<body class="font-sans text-gray-700 antialiased bg-gray-50">
+<body>
+<div class="hero">
+ <div class="wrap">
+  <header>
+   <div class="logo">DR. VINÍCIUS ASSIS<small>ENDOCRINOLOGIA · CRM 5278769-8</small></div>
+   <a class="btn ghost" href="#contato">Agendar</a>
+  </header>
+  <h1>Emagrecimento com saúde e <mark>equilíbrio hormonal</mark></h1>
+  <p>Consultório de endocrinologia em Nova Iguaçu. Investigamos a causa antes de tratar, com acompanhamento médico em cada etapa.</p>
+  <div class="row">
+   <a class="btn" href="#contato">Comece sua mudança hoje!</a>
+   <a class="btn ghost" href="#areas">Conheça as áreas de atuação</a>
+  </div>
+ </div>
+</div>
 
-    <!-- Header / Navbar -->
-    <header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center gap-3">
-                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white text-xl">
-                        <i class="fa-solid fa-user-doctor"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-xl font-bold text-dark leading-tight">Elisângela Costa</h1>
-                        <p class="text-sm text-primary font-medium">Fonoaudióloga</p>
-                    </div>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#servicos" class="text-gray-600 hover:text-primary transition-colors font-medium">Serviços</a>
-                    <a href="#localizacao" class="text-gray-600 hover:text-primary transition-colors font-medium">Localização</a>
-                </div>
-                <div>
-                    <a href="https://wa.me/5521971902375" target="_blank" class="bg-secondary hover:bg-teal-600 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg flex items-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        <span class="hidden sm:inline">Agendar Consulta</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
+<section id="areas">
+ <div class="wrap">
+  <div class="kicker">Áreas de atuação</div>
+  <h2>Cuidado endocrinológico completo</h2>
+  <div class="grid">
+   <div class="card"><h3>Emagrecimento</h3><p>Perda de peso com orientação médica, preservando massa magra. Caneta não substitui acompanhamento.</p></div>
+   <div class="card"><h3>Saúde hormonal feminina</h3><p>Ciclo irregular, SOP, tireoide, prolactina elevada e perimenopausa avaliados com critério.</p></div>
+   <div class="card"><h3>Equilíbrio hormonal</h3><p>Hormônios não devem ser prescritos apenas para “corrigir” sintomas. Indicação exige diagnóstico.</p></div>
+   <div class="card"><h3>Exames “normais”, mas você mal?</h3><p>Investigação individualizada para entender por que você continua se sentindo tão mal.</p></div>
+  </div>
+ </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-accent to-white overflow-hidden relative">
-        <!-- Decorative shapes -->
-        <div class="absolute top-20 right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-10 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+<section class="alt">
+ <div class="wrap">
+  <div class="kicker">Seu corpo está dando sinais?</div>
+  <h2>Quantos você marcou?</h2>
+  <ul class="sign">
+   <li>Minha libido diminuiu</li>
+   <li>Minha energia não é mais a mesma</li>
+   <li>Tenho me sentido mais cansado(a)</li>
+   <li>Perdi força ou massa muscular</li>
+   <li>Minha disposição para treinar caiu</li>
+   <li>Tenho dificuldade de concentração</li>
+   <li>Meu sono piorou</li>
+  </ul>
+  <p class="note">Esses sinais podem aparecer em alterações hormonais, mas também podem ter outras causas. Sintoma levanta uma suspeita; o diagnóstico exige investigação.</p>
+ </div>
+</section>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto fade-in">
-                
-                <!-- Rating Badge -->
-                <div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm mb-6 border border-gray-100">
-                    <div class="text-yellow-400 flex text-sm">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="text-dark font-semibold">5,0</span>
-                    <span class="text-gray-500 text-sm">(31 avaliações)</span>
-                </div>
+<section>
+ <div class="wrap">
+  <div class="kicker">Nossa abordagem</div>
+  <h2>Investigar vem antes de tratar</h2>
+  <div class="steps">
+   <div class="step"><h3>Escuta e avaliação</h3><p>Entendemos sua história, rotina e queixas com calma.</p></div>
+   <div class="step"><h3>Investigação</h3><p>Exames solicitados com propósito, sem protocolos genéricos.</p></div>
+   <div class="step"><h3>Plano individual</h3><p>Tratamento personalizado, com menos achismo e mais critério.</p></div>
+   <div class="step"><h3>Acompanhamento</h3><p>Retornos para ajustar o plano e proteger sua saúde no processo.</p></div>
+  </div>
+ </div>
+</section>
 
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark leading-tight mb-6">
-                    Comunicação e Voz com <span class="text-primary">Cuidado e Excelência</span>
-                </h2>
-                
-                <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-                    Atendimento humanizado e especializado. Recupere a qualidade da sua comunicação, fala e voz com tratamentos adequados para todas as idades.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://wa.me/5521971902375" target="_blank" class="bg-primary hover:bg-cyan-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
-                        Falar no WhatsApp
-                    </a>
-                    <a href="#servicos" class="bg-white hover:bg-gray-50 text-dark border border-gray-200 px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-sm flex items-center justify-center">
-                        Conhecer Serviços
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="cta" id="contato">
+ <div class="wrap">
+  <h2>Comece sua mudança hoje!</h2>
+  <p>Agende sua avaliação endocrinológica e receba orientação segura, com acompanhamento de verdade.</p>
+  <a class="btn" href="https://www.instagram.com/drviniciusassis/" target="_blank" rel="noopener">Agendar minha consulta</a>
+ </div>
+</section>
 
-    <!-- Services Section -->
-    <section id="servicos" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h3 class="text-primary font-semibold tracking-wide uppercase text-sm mb-2">Especialidades</h3>
-                <h2 class="text-3xl md:text-4xl font-bold text-dark">Serviços Oferecidos</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto mt-6 rounded-full"></div>
-            </div>
+<section>
+ <div class="wrap loc">
+  <div>
+   <div class="kicker">Localização</div>
+   <h2>Onde estamos</h2>
+   <p><strong>Vitality Center – Sala 411</strong><br>Av. Dr. Mário Guimarães, 318<br>Nova Iguaçu, RJ · CEP 26255-230</p>
+   <p><a href="https://www.google.com/maps/search/?api=1&query=Av.+Dr.+M%C3%A1rio+Guimar%C3%A3es+318+Nova+Igua%C3%A7u+RJ" target="_blank" rel="noopener" style="color:var(--red);font-weight:600">Abrir no mapa →</a></p>
+  </div>
+  <div>
+   <div class="kicker">Contato</div>
+   <h2>Fale com o consultório</h2>
+   <p>Instagram: <a href="https://www.instagram.com/drviniciusassis/" target="_blank" rel="noopener" style="color:var(--red);font-weight:600">@drviniciusassis</a></p>
+   <p>Endocrinologia · CRM 5278769-8</p>
+  </div>
+ </div>
+</section>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 fade-in group">
-                    <div class="w-14 h-14 bg-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                        <i class="fa-solid fa-baby text-2xl text-primary group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-dark mb-4">Teste da Linguinha</h4>
-                    <p class="text-gray-600 leading-relaxed">
-                        Avaliação precoce e segura para o frênulo lingual de bebês. Fundamental para garantir uma amamentação sem dores e o desenvolvimento adequado da fala infantil.
-                    </p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 fade-in group" style="transition-delay: 100ms;">
-                    <div class="w-14 h-14 bg-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                        <i class="fa-solid fa-comments text-2xl text-primary group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-dark mb-4">Terapia de Fala e Linguagem</h4>
-                    <p class="text-gray-600 leading-relaxed">
-                        Acompanhamento especializado para atrasos na fala, trocas de letras e estímulo ao desenvolvimento da linguagem de forma lúdica e eficaz para crianças e adultos.
-                    </p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 fade-in group" style="transition-delay: 200ms;">
-                    <div class="w-14 h-14 bg-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                        <i class="fa-solid fa-microphone-lines text-2xl text-primary group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-dark mb-4">Terapia de Voz</h4>
-                    <p class="text-gray-600 leading-relaxed">
-                        Cuidado focado em profissionais da voz (professores, cantores, etc.), tratamento de rouquidão, cansaço vocal e reabilitação para uma voz clara e saudável.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location & Info Section -->
-    <section id="localizacao" class="py-20 bg-dark text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                <div class="fade-in">
-                    <h3 class="text-secondary font-semibold tracking-wide uppercase text-sm mb-2">Visite o Consultório</h3>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Localização e Contato</h2>
-                    <p class="text-gray-300 mb-8 text-lg">
-                        Um espaço planejado para o seu conforto e bem-estar, localizado no centro de Belford Roxo com fácil acesso.
-                    </p>
-
-                    <ul class="space-y-6">
-                        <li class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fa-solid fa-location-dot text-secondary text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-lg mb-1">Endereço</h4>
-                                <p class="text-gray-400 leading-relaxed">
-                                    Shopping Nova Belford<br>
-                                    Av. Benjamin Pinto Dias, 1130 - Sala 302<br>
-                                    Centro, Belford Roxo - RJ<br>
-                                    CEP: 26130-000
-                                </p>
-                            </div>
-                        </li>
-                        
-                        <li class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fa-solid fa-clock text-secondary text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-lg mb-1">Horário de Funcionamento</h4>
-                                <p class="text-gray-400">Atendimentos mediante agendamento.</p>
-                            </div>
-                        </li>
-
-                        <li class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fa-brands fa-whatsapp text-secondary text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-lg mb-1">WhatsApp</h4>
-                                <p class="text-gray-400">(21) 97190-2375</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Google Maps Placeholder/Iframe Area -->
-                <div class="bg-white/5 p-2 rounded-3xl fade-in" style="transition-delay: 200ms;">
-                    <div class="relative w-full h-[400px] rounded-2xl overflow-hidden bg-gray-800">
-                        <!-- Using a generic map embed based on the address for visualization -->
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.291361956799!2d-43.39959632469145!3d-22.76348327935496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9965d1d64c1bb3%3A0x86bd6e1598f62fa1!2sAv.%20Benjamin%20Pinto%20Dias%2C%201130%20-%20Centro%2C%20Belford%20Roxo%20-%20RJ%2C%2026130-000!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0; filter: invert(90%) hue-rotate(180deg);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4">
-            <p>&copy; <span id="year"></span> Fonoaudióloga Elisângela Costa. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/5521971902375" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform whatsapp-fab" aria-label="Falar no WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Scripts for Interactivity -->
-    <script>
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Run once
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach((el) => {
-            observer.observe(el);
-        });
-    </script>
+<footer>
+ <div class="wrap">© Dr. Vinícius Assis · Endocrinologia · CRM 5278769-8. Este site tem caráter informativo e não substitui consulta médica.</div>
+</footer>
 </body>
 </html>
