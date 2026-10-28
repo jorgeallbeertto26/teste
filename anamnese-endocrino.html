@@ -41,8 +41,9 @@ h2{font-size:clamp(30px,5vw,42px);margin:6px 0 18px}
 .yn input:focus-visible+span{outline:2px solid var(--ink);outline-offset:2px}
 textarea,input[type=text],input[type=number],select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:6px;padding:10px 12px}
 textarea{min-height:70px;resize:vertical}
-.id{display:grid;gap:14px;grid-template-columns:2fr 1fr 1fr}
-@media(max-width:600px){.id{grid-template-columns:1fr}}
+.id{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.id label{display:block;font-size:13px;color:var(--mut);margin-bottom:4px}
+.q textarea.det{display:none}.q textarea.det.on{display:block}
 .note{border-left:4px solid var(--red);padding:4px 0 4px 16px;color:var(--mut);font-size:14px;margin:0 0 16px}
 .out{padding:40px 0 64px}
 .out textarea{min-height:240px;font:14px/1.5 ui-monospace,Menlo,monospace}
@@ -70,9 +71,10 @@ footer{padding:24px 0;font-size:13px;color:var(--mut);text-align:center;border-t
   <div class="kicker">Identificação</div>
   <h2>Dados básicos</h2>
   <div class="id">
-   <div><input type="text" id="nome" placeholder="Nome completo"></div>
-   <div><input type="number" id="idade" placeholder="Idade" min="0" max="120"></div>
-   <div><input type="text" id="data" placeholder="Data"></div>
+   <div style="grid-column:1/-1"><label for="nome">Nome</label><input type="text" id="nome" placeholder="Nome completo"></div>
+   <div><label for="idade">Idade</label><input type="number" id="idade" placeholder="Idade" min="0" max="120"></div>
+   <div><label for="orient">Orientação sexual</label><select id="orient"><option value="">Selecione</option><option>Heterossexual</option><option>Homossexual</option><option>Bissexual</option><option>Outra</option><option>Prefiro não informar</option></select></div>
+   <div><label for="data">Data</label><input type="text" id="data"></div>
   </div>
  </section>
  <div id="form"></div>
@@ -80,7 +82,7 @@ footer{padding:24px 0;font-size:13px;color:var(--mut);text-align:center;border-t
  <div class="out">
   <div class="kicker">Finalizar</div>
   <h2>Resumo das suas respostas</h2>
-  <p class="note">Seus dados ficam apenas neste navegador: esta página não envia nada para lugar nenhum. Copie o resumo e leve ou envie ao consultório. Se tiver dor intensa, sangue na urina com febre ou não conseguir urinar, procure um pronto atendimento.</p>
+  <p class="note">Seus dados ficam apenas neste navegador: esta página não envia nada para lugar nenhum. Copie o resumo e leve ou envie ao consultório. Em caso de emergência, procure um pronto atendimento.</p>
   <div class="row">
    <button class="btn" id="gen">Gerar resumo</button>
    <button class="btn ghost" id="cp" style="color:var(--ink)">Copiar resumo</button>
@@ -89,34 +91,14 @@ footer{padding:24px 0;font-size:13px;color:var(--mut);text-align:center;border-t
   <textarea id="res" placeholder="O resumo aparece aqui." aria-label="Resumo da anamnese"></textarea>
  </div>
 </main>
-<footer><div class="wrap">Vitality Center – Sala 411 · Av. Dr. Mário Guimarães, 318, Nova Iguaçu, RJ · Esta anamnese é informativa e não substitui a consulta médica.</div></footer>
+<footer><div class="wrap">Vitality Center – Sala 411 · Av. Dr. Mário Guimarães, 318, Nova Iguaçu, RJ · Instagram: <a href="https://www.instagram.com/drviniciusassis/" target="_blank" rel="noopener" style="color:inherit">@drviniciusassis</a> · Esta anamnese é informativa e não substitui a consulta médica.</div></footer>
 
 <script>
 var S=[
-{t:"Queixa principal",q:[
- ["Qual o motivo principal da sua consulta hoje?","t"],
- ["Há quanto tempo esses sintomas começaram e como eles evoluíram?","t"]]},
-{t:"Sintomas urinários",k:"Armazenamento e esvaziamento",q:[
- ["Você sente dor, ardor ou queimação ao urinar?","y"],
- ["Tem notado mudança na cor da urina ou presença de sangue (hematúria)?","y"],
- ["O jato de urina está mais fraco, interrompido ou demora para começar?","y"],
- ["Você sente necessidade de fazer força para urinar?","y"],
- ["Sente que a bexiga não esvaziou completamente após ir ao banheiro?","y"],
- ["Quantas vezes você precisa acordar durante a noite para urinar (noctúria)?","s"],
- ["Sente uma urgência repentina de urinar que é difícil de segurar, ou chega a perder urina na roupa?","y"]]},
-{t:"Dor e alterações físicas",q:[
- ["Sente dor na região lombar (costas), no “pé da barriga” (pelve) ou na região genital? A dor irradia para algum lugar?","y"],
- ["Notou algum inchaço, caroço, ferida ou vermelhidão nos testículos ou no pênis?","y"]]},
-{t:"Função sexual e reprodutiva",k:"Pacientes masculinos",q:[
- ["Como está o seu desejo sexual (libido)?","t"],
- ["Tem ou teve alguma dificuldade para alcançar ou manter uma ereção?","y"],
- ["Notou alguma alteração na ejaculação (rápida, dolorosa ou ausente)?","y"],
- ["Tem planos ou dificuldades relacionadas à fertilidade?","y"]]},
-{t:"Histórico médico e familiar",q:[
- ["Você ou alguém da sua família direta (pai, irmão) tem histórico de câncer de próstata, rim ou bexiga?","y"],
- ["Já teve pedras nos rins (cálculo renal), infecções urinárias de repetição ou doenças sexualmente transmissíveis (DSTs)?","y"],
- ["Fez alguma cirurgia urológica ou abdominal anterior?","y"],
- ["Quais medicamentos, suplementos ou vitaminas você toma regularmente?","t"]]}
+{t:"Histórico de saúde",k:"Responda com sinceridade",q:[
+ ["Faz uso de medicamento regularmente?","y","Se sim, qual(is)?"],
+ ["Já foi internado(a)?","y","Se sim, por qual motivo?"],
+ ["Já foi submetido(a) a alguma cirurgia?","y","Se sim, por qual motivo?"]]}
 ];
 var Q=[],f=document.getElementById("form"),n=0;
 S.forEach(function(s){
@@ -124,7 +106,7 @@ S.forEach(function(s){
  s.q.forEach(function(x){
   var i=n++;Q.push({q:x[0],t:x[1],s:s.t});
   h+='<div class="q"><label class="l" for="d'+i+'">'+x[0]+'</label>';
-  if(x[1]=="y"){h+='<div class="yn"><label><input type="radio" name="r'+i+'" value="Sim"><span>Sim</span></label><label><input type="radio" name="r'+i+'" value="Não"><span>Não</span></label></div><textarea id="d'+i+'" placeholder="Detalhes (opcional): quando começou, intensidade, frequência…"></textarea>'}
+  if(x[1]=="y"){h+='<div class="yn"><label><input type="radio" name="r'+i+'" value="Sim" data-i="'+i+'"><span>Sim</span></label><label><input type="radio" name="r'+i+'" value="Não" data-i="'+i+'"><span>Não</span></label></div><textarea class="det" id="d'+i+'" aria-label="'+x[2]+'" placeholder="'+x[2]+'"></textarea>'}
   else if(x[1]=="s"){h+='<select id="d'+i+'"><option value="">Selecione</option><option>Nenhuma vez</option><option>1 vez</option><option>2 vezes</option><option>3 vezes</option><option>4 ou mais vezes</option></select>'}
   else h+='<textarea id="d'+i+'" placeholder="Escreva aqui"></textarea>';
   h+='</div>'});
@@ -136,9 +118,10 @@ function prog(){var c=0;Q.forEach(function(_,i){if(val(i).a||val(i).d)c++});
  document.getElementById("pg").style.width=(c/Q.length*100)+"%";
  document.getElementById("pt").textContent=c+" de "+Q.length+" respondidas"}
 document.getElementById("data").value=new Date().toLocaleDateString("pt-BR");
+document.addEventListener("change",function(e){var t=e.target;if(t.dataset&&t.dataset.i){document.getElementById("d"+t.dataset.i).classList.toggle("on",t.value=="Sim")}});
 document.addEventListener("input",prog);document.addEventListener("change",prog);prog();
 function gen(){var o="ANAMNESE – Dr. Vinícius Assis (Endocrinologia, CRM 5278769-8)\n";
- o+="Paciente: "+(nome.value||"—")+" | Idade: "+(idade.value||"—")+" | Data: "+(data.value||"—")+"\n";
+ o+="Paciente: "+(nome.value||"—")+" | Idade: "+(idade.value||"—")+" | Orientação sexual: "+(orient.value||"—")+" | Data: "+(data.value||"—")+"\n";
  var cur="";Q.forEach(function(q,i){var v=val(i);if(!v.a&&!v.d)return;
   if(q.s!=cur){cur=q.s;o+="\n"+cur.toUpperCase()+"\n"}
   o+="• "+q.q+"\n  → "+(q.t=="y"?(v.r||"—")+(v.d?" – "+v.d:""):v.d)+"\n"});
